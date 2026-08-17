@@ -198,7 +198,7 @@ export const certificates = [
     title: 'Data Analytics',
     icon: 'pie',
     tint: 'bg-mist text-ac-lav',
-    href: '/public/SANTHOSH DATA (2).pdf',
+    href: '/SANTHOSH DATA (2).pdf',
   },
 ]
 
