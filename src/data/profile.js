@@ -124,6 +124,7 @@ export const projects = [
       'Built a responsive, user-friendly ticket booking platform as a Full Stack Developer, handling frontend design, backend logic, database integration, and seamless booking flow end-to-end.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Express'],
     accent: 'from-ac-blue to-ac-sky',
+    link: 'https://ticket-booking-site-two.vercel.app',
   },
   {
     title: 'Power BI Dashboard — Blinkit Analytics',
