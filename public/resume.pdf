@@ -1,0 +1,66 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 3505 >>
+stream
+BT /F2 24 Tf 0.357 0.510 0.902 rg 52 748 Td (Santhosh S V) Tj ET
+BT /F2 12 Tf 0.541 0.435 0.910 rg 52 692.32 Td (Front-End Developer  |  Software Engineer in Training) Tj ET
+BT /F1 9 Tf 0.420 0.410 0.470 rg 52 666.48 Td (Email: santhoshsv0927@gmail.com   |   Phone: +91 8056436278   |   Salem, India) Tj ET
+BT /F1 9 Tf 0.420 0.410 0.470 rg 52 639.6 Td (LinkedIn: linkedin.com/in/santhosh-s-v-8b29a) Tj ET
+BT /F2 12.5 Tf 0.357 0.510 0.902 rg 52 612.72 Td (EDUCATION) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 574.72 Td (B.E. Computer Science and Engineering  -  Knowledge Institute of Technology \(2022 - 2026\)) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 547.36 Td (CGPA 7.73 / 10.0) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 520.32 Td (HSC  -  Kamarajar Matric Hr. Sec. School \(2021 - 2022\)) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 492.96 Td (70.8%) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 465.92 Td (SSLC  -  Sriswamy International School, CBSE \(2019 - 2020\)) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 438.56 Td (69.6%) Tj ET
+BT /F2 12.5 Tf 0.357 0.510 0.902 rg 52 411.52 Td (TECHNICAL SKILLS) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 373.52 Td (Programming:  Python, Java, C, MySQL, HTML/CSS, JavaScript) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 346.16 Td (Data & Analytics:  Power BI, DAX, SQL, Excel, Power Query, Tableau) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 318.8 Td (Design:  UI/UX Design, Figma, Adobe XD, Wireframing, Prototyping) Tj ET
+BT /F2 12.5 Tf 0.357 0.510 0.902 rg 52 291.44 Td (INTERNSHIP EXPERIENCE) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 253.44 Td (Java Programming Intern  -  DevSkillHub \(Feb - Apr 2024\)) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 226.08 Td (Built OOP-based Java applications covering exception handling, file I/O and multithreading using Eclipse/IntelliJ and Git.) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 199.04 Td (UI/UX Design Intern  -  CODSOFT \(Feb - Mar 2024\)) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 171.68 Td (Designed wireframes and prototypes with Figma and Adobe XD, focused on usability and user-centred design.) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 144.64 Td (App Development Intern  -  LITZ TECH \(Jul 2024\)) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 117.28 Td (Built mobile app fundamentals using Flutter and Dart in a fast-paced program.) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 90.24 Td (Data Analytics Intern  -  TECHNOHACKS \(Mar - Apr 2025\)) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 62.88 Td (Collected, cleaned and analysed datasets with Excel, Python \(Pandas, NumPy, Matplotlib\) and Power BI/Tableau.) Tj ET
+BT /F2 12.5 Tf 0.357 0.510 0.902 rg 52 35.84 Td (PROJECTS) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 -2.16 Td (Student Enterprise Resource Planning System) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 -29.52 Td (Full student management platform for records, attendance, grades and enrolment using Java, MySQL and HTML/CSS.) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 -56.56 Td (AI Desktop Voice Assistant) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 -83.92 Td (Python voice assistant with SpeechRecognition, PyAudio, TTS and NLP for searches, reminders and system control.) Tj ET
+BT /F2 10.5 Tf 0.170 0.160 0.200 rg 52 -110.96 Td (Power BI Dashboard  -  Blinkit Analytics) Tj ET
+BT /F1 9.5 Tf 0.420 0.410 0.470 rg 62 -138.32 Td (Interactive BI dashboard for revenue, categories and regional performance using Power BI, DAX, SQL and Power Query.) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+3953
+%%EOF

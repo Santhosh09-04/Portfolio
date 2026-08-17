@@ -1,0 +1,7 @@
+node_modules
+dist
+*.local
+.DS_Store
+*_install.log
+_dircheck.txt
+_versions.txt
