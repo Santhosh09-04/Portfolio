@@ -21,7 +21,7 @@ export default function Certificates() {
           subtitle="Focused training completed through internships and structured programs."
         />
 
-        <div className="grid grid-cols-2 gap-5 sm:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {certificates.map((cert, i) => (
             <Reveal key={cert.title} delay={i * 0.1}>
               <motion.div

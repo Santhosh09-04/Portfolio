@@ -6,7 +6,7 @@ import Reveal from './ui/Reveal.jsx'
 import Icon from './ui/Icon.jsx'
 
 const inputCls =
-  'w-full rounded-2xl border border-white/80 bg-white/70 px-4 py-3.5 text-sm text-ink shadow-soft placeholder:text-muted/70 outline-none backdrop-blur transition focus:border-ac-lav/70 focus:bg-white focus:ring-4 focus:ring-ac-lav/20'
+  'w-full rounded-2xl border border-white/80 bg-white/70 px-4 py-3.5 text-[16px] text-ink shadow-soft placeholder:text-muted/70 outline-none backdrop-blur transition focus:border-ac-lav/70 focus:bg-white focus:ring-4 focus:ring-ac-lav/20 sm:text-sm'
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')

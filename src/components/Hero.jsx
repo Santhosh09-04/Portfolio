@@ -58,7 +58,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative flex min-h-[100svh] items-center overflow-hidden pb-24 pt-32 sm:pt-28"
+      className="relative flex min-h-[100svh] flex-col items-center overflow-x-hidden pb-24 pt-32 sm:pt-28 md:flex-row"
     >
       {/* soft color washes (gsap parallax targets) */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
@@ -76,23 +76,23 @@ export default function Hero() {
       {/* floating 3D centerpiece + profile photo */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 md:inset-y-0 md:left-auto md:right-0 md:w-[52%]"
+        className="pointer-events-none relative order-2 mt-14 h-[340px] w-full overflow-hidden md:order-none md:absolute md:inset-y-0 md:left-auto md:right-0 md:mt-0 md:h-auto md:w-[52%] md:overflow-visible"
       >
-        <div className="relative h-full w-full [transform:translate(16vw,18vh)_scale(1.15)] md:[transform:none]">
+        <div className="relative h-full w-full">
           <HeroScene />
 
           {/* soft glow blob behind the photo */}
           <div className="absolute inset-0 grid place-items-center">
             <div
               aria-hidden="true"
-              className="col-start-1 row-start-1 h-80 w-80 rounded-full bg-gradient-to-tr from-ac-sky/60 via-ac-lav/50 to-ac-peach/50 blur-3xl sm:h-96 sm:w-96 md:h-[28rem] md:w-[28rem]"
+              className="col-start-1 row-start-1 h-72 w-72 rounded-full bg-gradient-to-tr from-ac-sky/60 via-ac-lav/50 to-ac-peach/50 blur-3xl sm:h-96 sm:w-96 md:h-[28rem] md:w-[28rem]"
             />
 
             {/* floating profile photo — uses profile.photoPath from src/data/profile.js */}
             <motion.img
               src={profile.photoPath}
               alt={profile.name}
-              className="col-start-1 row-start-1 h-64 w-64 rounded-full border-4 border-white/60 object-cover object-top shadow-2xl sm:h-80 sm:w-80 md:h-96 md:w-96"
+              className="col-start-1 row-start-1 h-52 w-52 rounded-full border-4 border-white/60 object-cover object-top shadow-2xl sm:h-80 sm:w-80 md:h-96 md:w-96"
               animate={reduce ? false : { y: [0, -14, 0] }}
               transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
             />
@@ -101,10 +101,10 @@ export default function Hero() {
       </div>
 
       {/* content */}
-      <div className="section-shell relative z-10">
-        <div className="max-w-2xl lg:max-w-[46rem]">
+      <div className="section-shell relative z-10 order-1 md:order-none">
+        <div className="w-full max-w-full break-words md:max-w-2xl lg:max-w-[46rem]">
           <FadeUp delay={0.1}>
-            <span className="chip">
+            <span className="chip max-w-[280px] sm:max-w-none">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ac-lav/70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-ac-lav" />
@@ -114,7 +114,7 @@ export default function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.22}>
-            <h1 className="mt-6 font-display text-[2.85rem] font-bold leading-[1.03] tracking-tight text-ink sm:text-6xl lg:text-7xl xl:text-[5rem]">
+            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.03] tracking-tight text-ink break-words sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem]">
               {profile.firstName}
               <br />
               <span className="text-gradient">{profile.name.replace(`${profile.firstName} `, '')}</span>
