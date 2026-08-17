@@ -176,10 +176,30 @@ export const experiences = [
 ]
 
 export const certificates = [
-  { title: 'Java Programming', icon: 'code', tint: 'bg-lilac text-ac-lav' },
-  { title: 'App Development', icon: 'smartphone', tint: 'bg-mist text-ac-blue' },
-  { title: 'UI & UX Design', icon: 'palette', tint: 'bg-blush text-ac-peach' },
-  { title: 'Data Analytics', icon: 'pie', tint: 'bg-mist text-ac-lav' },
+  {
+    title: 'Java Programming',
+    icon: 'code',
+    tint: 'bg-lilac text-ac-lav',
+    href: '/SANTHOSH S V (2).pdf',
+  },
+  {
+    title: 'App Development',
+    icon: 'smartphone',
+    tint: 'bg-mist text-ac-blue',
+    href: '/LitzTech.pdf',
+  },
+  {
+    title: 'UI & UX Design',
+    icon: 'palette',
+    tint: 'bg-blush text-ac-peach',
+    href: '/Santhosh S V (3).pdf',
+  },
+  {
+    title: 'Data Analytics',
+    icon: 'pie',
+    tint: 'bg-mist text-ac-lav',
+    href: '/public/SANTHOSH DATA (2).pdf',
+  },
 ]
 
 export const languages = [
