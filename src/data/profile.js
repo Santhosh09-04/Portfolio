@@ -176,7 +176,7 @@ export const experiences = [
 ]
 
 export const certificates = [
-  { title: 'Java Programming', icon: 'code', tint: 'bg-lilac text-ac-lav', link: '/certificates/java-programming.pdf' },
+  { title: 'Java Programming', icon: 'code', tint: 'bg-lilac text-ac-lav' },
   { title: 'App Development', icon: 'smartphone', tint: 'bg-mist text-ac-blue' },
   { title: 'UI & UX Design', icon: 'palette', tint: 'bg-blush text-ac-peach' },
   { title: 'Data Analytics', icon: 'pie', tint: 'bg-mist text-ac-lav' },
