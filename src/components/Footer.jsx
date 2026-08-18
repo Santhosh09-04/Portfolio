@@ -3,7 +3,7 @@ import Icon from './ui/Icon.jsx'
 
 export default function Footer() {
   const year = new Date().getFullYear()
-  const icons = { linkedin: 'linkedin', mail: 'mail', phone: 'phone' }
+  const icons = { linkedin: 'linkedin', github: 'github', mail: 'mail', phone: 'phone' }
 
   return (
     <footer className="relative border-t border-hairline bg-white/40 backdrop-blur-md">

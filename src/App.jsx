@@ -14,7 +14,6 @@ import Languages from './components/Languages.jsx'
 import Interests from './components/Interests.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
-
 export default function App() {
   return (
     <div className="relative">

@@ -52,7 +52,7 @@ export default function Hero() {
     return () => ctx.revert()
   }, [reduce])
 
-  const socialIcons = { linkedin: 'linkedin', mail: 'mail', phone: 'phone' }
+  const socialIcons = { linkedin: 'linkedin', github: 'github', mail: 'mail', phone: 'phone' }
 
   return (
     <section

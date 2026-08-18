@@ -10,7 +10,7 @@ export const profile = {
   phone: '+91 80564 36278',
   phoneHref: 'tel:+918056436278',
   location: 'Salem, India',
-  linkedin: 'https://www.linkedin.com/in/santhosh-s-v-8b29a',
+  linkedin: 'https://www.linkedin.com/in/santhosh-s-v-57b9a542a',
   resumePath: '/resume.pdf',
   photoPath: '/santhosh.jpeg.jpeg', // profile photo used across the site (Hero overlay + About)
   photoPlaceholderText:
@@ -24,9 +24,15 @@ export const profile = {
 export const heroSocials = [
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/santhosh-s-v-8b29a',
+    href: 'https://www.linkedin.com/in/santhosh-s-v-57b9a542a',
     icon: 'linkedin',
     aria: 'Open Santhosh for trying LinkedIn profile',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/Santhosh09-04',
+    icon: 'github',
+    aria: 'GitHub profile',
   },
   {
     label: 'Email',
