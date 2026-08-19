@@ -183,7 +183,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative flex min-h-[100svh] w-full max-w-full flex-col items-center overflow-x-hidden pb-16 pt-28 sm:pb-20 sm:pt-28 md:flex-row md:pb-24"
+      className="relative flex min-h-[100svh] w-full max-w-full flex-col items-center overflow-x-hidden pb-16 pt-24 sm:pb-20 sm:pt-28 lg:flex-row lg:pb-24"
     >
       {/* Hero background image layer (lowest z-index) */}
       <HeroBackground />
@@ -204,24 +204,24 @@ export default function Hero() {
       {/* section-wide floating tech logo badges */}
       <TechFloatingBadges />
 
-      {/* self-contained profile photo block */}
+      {/* self-contained profile photo block — merged into top right on mobile/tablet, exact desktop side-by-side on desktop */}
       <div
         aria-hidden="true"
-        className="pointer-events-none relative z-10 order-2 mt-6 flex h-[280px] w-full max-w-full items-center justify-center sm:h-[320px] md:order-none md:absolute md:inset-y-0 md:left-auto md:right-0 md:mt-0 md:h-auto md:w-[52%]"
+        className="pointer-events-none absolute right-3 top-20 z-0 flex h-40 w-40 items-center justify-center sm:right-6 sm:top-24 sm:h-56 sm:w-56 md:right-10 md:top-24 md:h-64 md:w-64 lg:order-none lg:absolute lg:inset-y-0 lg:left-auto lg:right-0 lg:top-0 lg:mt-0 lg:h-auto lg:w-[52%] lg:z-10"
       >
         <div className="relative flex h-full w-full items-center justify-center">
-          {/* soft glow blob behind the photo */}
+          {/* soft glow blob & floating profile photo grid container */}
           <div className="absolute inset-0 grid place-items-center">
             <div
               aria-hidden="true"
-              className="col-start-1 row-start-1 h-60 w-60 rounded-full bg-gradient-to-tr from-ac-sky/60 via-ac-lav/50 to-ac-peach/50 blur-3xl sm:h-80 sm:w-80 md:h-[28rem] md:w-[28rem]"
+              className="col-start-1 row-start-1 h-40 w-40 rounded-full bg-gradient-to-tr from-ac-sky/60 via-ac-lav/50 to-ac-peach/50 blur-2xl sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-[28rem] lg:w-[28rem]"
             />
 
             {/* floating profile photo — uncropped circular photo */}
             <motion.img
               src={profile.photoPath}
               alt={profile.name}
-              className="col-start-1 row-start-1 h-56 w-56 rounded-full border-4 border-white/60 object-cover object-top shadow-2xl sm:h-72 sm:w-72 md:h-96 md:w-96"
+              className="col-start-1 row-start-1 h-36 w-36 rounded-full border-4 border-white/60 object-cover object-top shadow-2xl sm:h-52 sm:w-52 md:h-60 md:w-60 lg:h-96 lg:w-96"
               animate={reduce ? false : { y: [0, -10, 0] }}
               transition={{ duration: 5, ease: 'easeInOut', repeat: Infinity }}
             />
@@ -230,20 +230,20 @@ export default function Hero() {
       </div>
 
       {/* content */}
-      <div className="section-shell relative z-10 order-1 md:order-none">
+      <div className="section-shell relative z-10 lg:order-none">
         <div className="w-full max-w-full break-words md:max-w-2xl lg:max-w-[46rem]">
           <FadeUp delay={0.1}>
-            <span className="chip max-w-[280px] sm:max-w-none">
-              <span className="relative flex h-2 w-2">
+            <span className="chip max-w-[calc(100%-145px)] sm:max-w-none">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-ac-lav/70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-ac-lav" />
               </span>
-              Open to internships &amp; collaboration
+              <span className="truncate sm:whitespace-normal">Open to internships &amp; collaboration</span>
             </span>
           </FadeUp>
 
           <FadeUp delay={0.22}>
-            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.03] tracking-tight text-ink break-words sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem]">
+            <h1 className="mt-5 font-display text-3xl font-bold leading-[1.05] tracking-tight text-ink break-words xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem]">
               {profile.firstName}
               <br />
               <span className="text-gradient">{profile.name.replace(`${profile.firstName} `, '')}</span>
@@ -251,7 +251,7 @@ export default function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.34}>
-            <p className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-base font-semibold text-ink-soft sm:text-xl">
+            <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-base font-semibold text-ink-soft sm:text-xl">
               <AnimatedRole />
               <span className="hidden h-1.5 w-1.5 rounded-full bg-ac-peach sm:inline-block" />
               <span className="font-normal text-muted">{profile.roleSecondary}</span>
@@ -265,7 +265,7 @@ export default function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.58}>
-            <div className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center">
+            <div className="mt-8 flex flex-col gap-3.5 sm:flex-row sm:items-center">
               <a href="#projects" className="btn-primary focus-ring">
                 View Projects
                 <Icon name="arrowRight" className="h-4 w-4" />
@@ -278,7 +278,7 @@ export default function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.7}>
-            <div className="mt-9 flex items-center gap-3">
+            <div className="mt-8 flex items-center gap-3">
               <span className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">Find me on</span>
               <span className="h-px w-8 bg-hairline" />
             </div>
