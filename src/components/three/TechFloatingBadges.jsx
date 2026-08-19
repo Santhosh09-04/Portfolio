@@ -15,16 +15,17 @@ import {
 gsap.registerPlugin(ScrollTrigger)
 
 const BADGES = [
-  // --- LARGE FOCAL BADGES ---
+  // --- 12 FULLY DISTRIBUTED BADGES ACROSS MOBILE & DESKTOP ---
+
+  // 1. React (LARGE ~48px mobile, 80px desktop)
   {
     name: 'React',
     brandColor: '#61DAFB',
     glowColor: 'rgba(97, 218, 251, 0.45)',
     sizeCategory: 'large',
-    badgeSizeClass: 'h-10 w-10 sm:h-13 sm:w-13 md:h-16 md:w-16 lg:h-20 lg:w-20',
-    iconSizeClass: 'h-5 w-5 sm:h-6.5 sm:w-6.5 md:h-8 md:w-8 lg:h-10 lg:w-10',
-    // Mobile/Tablet: top-left corner above headline; Desktop: top-left near headline
-    position: 'top-[8%] left-[2%] sm:top-[8%] sm:left-[2%] md:top-[8%] md:left-[2%] lg:top-[12%] lg:left-[6%]',
+    badgeSizeClass: 'h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20',
+    iconSizeClass: 'h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10',
+    position: 'top-[3%] left-2 sm:left-3 md:left-4 lg:top-[12%] lg:left-[6%]',
     floatDuration: 4.6,
     delay: 0,
     parallax: 0.85,
@@ -32,17 +33,18 @@ const BADGES = [
     rotY: 360,
     rotZ: 90,
     mobileShow: true,
-    icon: <SiReact className="h-5 w-5 sm:h-6.5 sm:w-6.5 md:h-8 md:w-8 lg:h-10 lg:w-10" style={{ color: '#61DAFB' }} />,
+    icon: <SiReact className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10" style={{ color: '#61DAFB' }} />,
   },
+
+  // 2. Java (LARGE ~48px mobile, 80px desktop)
   {
     name: 'Java',
     brandColor: '#ED8B00',
     glowColor: 'rgba(237, 139, 0, 0.45)',
     sizeCategory: 'large',
-    badgeSizeClass: 'h-10 w-10 sm:h-13 sm:w-13 md:h-16 md:w-16 lg:h-20 lg:w-20',
-    iconSizeClass: 'h-5 w-5 sm:h-6.5 sm:w-6.5 md:h-8 md:w-8 lg:h-10 lg:w-10',
-    // Mobile/Tablet: top-right corner above headline; Desktop: top-right near photo
-    position: 'top-[8%] right-[2%] sm:top-[8%] sm:right-[2%] md:top-[8%] md:right-[2%] lg:top-[10%] lg:right-[6%]',
+    badgeSizeClass: 'h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20',
+    iconSizeClass: 'h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10',
+    position: 'top-[3%] right-2 sm:right-3 md:right-4 lg:top-[10%] lg:right-[6%]',
     floatDuration: 5.2,
     delay: 0.4,
     parallax: 1.1,
@@ -51,21 +53,49 @@ const BADGES = [
     rotZ: -60,
     mobileShow: true,
     icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6.5 sm:w-6.5 md:h-8 md:w-8 lg:h-10 lg:w-10">
+      <svg viewBox="0 0 24 24" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10">
         <path fill="#ED8B00" d="M4 19c2 1.5 8 2 10.5 0 1-.5 3-2 1.5-3-.5-.5-2.5-.5-3.5 0-2 1-5 1-7.5 0-1-.5-2.5-.5-2 1 .5 1 1 1.5 1.5 2zM5.5 15.5c1.5 1 6.5 1.5 8.5 0 .8-.5 2-1.5 1-2.2-.5-.4-2-.4-3 0-1.5.7-4 .7-6 0-.8-.4-2-.4-1.5 1 .4.7.8 1 1 1.2z" />
         <path fill="#007396" d="M15 12c-1.5-1.5-3-1-3-2.5 0-2 2-2.5 2-4.5 0-1.5-1-2.5-1-2.5s.5.8.5 1.5c0 1.5-1.5 2.5-1.5 4 0 1.8 2 2.2 2 3.5 0 .7-.5 1-.5 1s.8-.3 1.5-.5z" />
       </svg>
     ),
   },
+
+  // 3. Power BI (SMALL ~26px mobile, 48px desktop) - Floating in upper central gap near chip
+  {
+    name: 'Power BI',
+    brandColor: '#F2C811',
+    glowColor: 'rgba(242, 200, 17, 0.4)',
+    sizeCategory: 'small',
+    badgeSizeClass: 'h-6.5 w-6.5 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12',
+    iconSizeClass: 'h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6',
+    position: 'top-[10%] right-[8%] sm:right-[12%] md:left-[32%] lg:top-[10%] lg:left-[32%]',
+    floatDuration: 5.1,
+    delay: 0.5,
+    parallax: 1.15,
+    rotX: -60,
+    rotY: 180,
+    rotZ: 90,
+    mobileShow: true,
+    icon: (
+      <div className="flex flex-col items-center justify-center leading-none">
+        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6">
+          <rect x="3" y="12" width="4.5" height="9" rx="1" fill="#F2C811" />
+          <rect x="9.75" y="7" width="4.5" height="14" rx="1" fill="#F2C811" />
+          <rect x="16.5" y="3" width="4.5" height="18" rx="1" fill="#F2C811" />
+        </svg>
+      </div>
+    ),
+  },
+
+  // 4. Python (LARGE ~48px mobile, 80px desktop) - Left side near name heading
   {
     name: 'Python',
     brandColor: '#3776AB',
     glowColor: 'rgba(55, 118, 171, 0.45)',
     sizeCategory: 'large',
-    badgeSizeClass: 'h-10 w-10 sm:h-13 sm:w-13 md:h-16 md:w-16 lg:h-20 lg:w-20',
-    iconSizeClass: 'h-5 w-5 sm:h-6.5 sm:w-6.5 md:h-8 md:w-8 lg:h-10 lg:w-10',
-    // Mobile/Tablet: bottom-left corner near scroll cue; Desktop: left near subtext
-    position: 'bottom-[5%] left-[3%] sm:bottom-[5%] sm:left-[2%] md:bottom-[5%] md:left-[2%] lg:top-[48%] lg:left-[4%]',
+    badgeSizeClass: 'h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20',
+    iconSizeClass: 'h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10',
+    position: 'top-[19%] left-2 sm:left-3 md:left-4 lg:top-[48%] lg:left-[4%]',
     floatDuration: 5.8,
     delay: 0.8,
     parallax: 0.9,
@@ -74,23 +104,41 @@ const BADGES = [
     rotZ: -180,
     mobileShow: true,
     icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6.5 sm:w-6.5 md:h-8 md:w-8 lg:h-10 lg:w-10">
+      <svg viewBox="0 0 24 24" className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-10 lg:w-10">
         <path fill="#3776AB" d="M11.87 2c-5.27 0-4.96 2.29-4.96 2.29l.01 2.38h5.05v.72H4.96S2.67 7.08 2.67 12.35c0 5.27 2.05 5.08 2.05 5.08h1.23v-1.74s-.07-2.05 2.05-2.05h5.01s1.97.03 1.97-1.92V6.96S15.35 2 11.87 2zm-2.01 1.56a.91.91 0 1 1 0 1.82.91.91 0 0 1 0-1.82z" />
         <path fill="#FFD43B" d="M12.13 22c5.27 0 4.96-2.29 4.96-2.29l-.01-2.38h-5.05v-.72h7.01s2.29.31 2.29-4.96c0-5.27-2.05-5.08-2.05-5.08h-1.23v1.74s.07 2.05-2.05 2.05h-5.01s-1.97-.03-1.97 1.92v4.75S8.65 22 12.13 22zm2.01-1.56a.91.91 0 1 1 0-1.82a.91.91 0 0 1 0 1.82z" />
       </svg>
     ),
   },
 
-  // --- MEDIUM SPACE-FILLER BADGES ---
+  // 5. Node.js (MEDIUM ~38px mobile, 64px desktop) - Right side gap near role/tagline text
+  {
+    name: 'Node.js',
+    brandColor: '#5FA04E',
+    glowColor: 'rgba(95, 160, 78, 0.4)',
+    sizeCategory: 'medium',
+    badgeSizeClass: 'h-9.5 w-9.5 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-16 lg:w-16',
+    iconSizeClass: 'h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8',
+    position: 'top-[30%] right-2 sm:right-3 md:right-4 lg:top-[72%] lg:left-[3%] lg:right-auto',
+    floatDuration: 4.8,
+    delay: 0.3,
+    parallax: 1.2,
+    rotX: 90,
+    rotY: 240,
+    rotZ: 120,
+    mobileShow: true,
+    icon: <SiNodedotjs className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#5FA04E' }} />,
+  },
+
+  // 6. MongoDB (MEDIUM ~38px mobile, 64px desktop) - Left-central open gap between tagline & CTA buttons
   {
     name: 'MongoDB',
     brandColor: '#47A248',
     glowColor: 'rgba(71, 162, 72, 0.4)',
     sizeCategory: 'medium',
-    badgeSizeClass: 'h-9.5 w-9.5 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16',
-    iconSizeClass: 'h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8',
-    // Mobile/Tablet: bottom-right corner; Desktop: middle-right
-    position: 'bottom-[5%] right-[3%] sm:bottom-[5%] sm:right-[2%] md:bottom-[5%] md:right-[2%] lg:top-[46%] lg:right-[5%]',
+    badgeSizeClass: 'h-9.5 w-9.5 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-16 lg:w-16',
+    iconSizeClass: 'h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8',
+    position: 'top-[42%] left-3 sm:left-4 md:left-4 lg:top-[46%] lg:right-[5%] lg:left-auto',
     floatDuration: 5.4,
     delay: 1.1,
     parallax: 0.85,
@@ -98,76 +146,126 @@ const BADGES = [
     rotY: -270,
     rotZ: 60,
     mobileShow: true,
-    icon: <SiMongodb className="h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#47A248' }} />,
+    icon: <SiMongodb className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#47A248' }} />,
   },
+
+  // 7. MySQL (SMALL ~26px mobile, 48px desktop) - Right side gap near social links
   {
-    name: 'Node.js',
-    brandColor: '#5FA04E',
-    glowColor: 'rgba(95, 160, 78, 0.4)',
-    sizeCategory: 'medium',
-    badgeSizeClass: 'h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16',
-    iconSizeClass: 'h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8',
-    position: 'top-[72%] left-[3%] md:left-[2%] lg:left-[3%]',
-    floatDuration: 4.8,
-    delay: 0.3,
-    parallax: 1.2,
-    rotX: 90,
-    rotY: 240,
+    name: 'MySQL',
+    brandColor: '#4479A1',
+    glowColor: 'rgba(68, 121, 161, 0.4)',
+    sizeCategory: 'small',
+    badgeSizeClass: 'h-6.5 w-6.5 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12',
+    iconSizeClass: 'h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6',
+    position: 'top-[55%] right-3 sm:right-4 md:right-4 lg:top-auto lg:right-auto lg:bottom-[10%] lg:left-[54%]',
+    floatDuration: 4.9,
+    delay: 0.6,
+    parallax: 1.0,
+    rotX: 180,
+    rotY: -180,
     rotZ: 120,
-    mobileShow: false,
-    icon: <SiNodedotjs className="h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#5FA04E' }} />,
+    mobileShow: true,
+    icon: <SiMysql className="h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6" style={{ color: '#4479A1' }} />,
   },
-  {
-    name: 'PostgreSQL',
-    brandColor: '#4169E1',
-    glowColor: 'rgba(65, 105, 225, 0.4)',
-    sizeCategory: 'medium',
-    badgeSizeClass: 'h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16',
-    iconSizeClass: 'h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8',
-    position: 'bottom-[14%] right-[4%] md:right-[6%] lg:right-[7%]',
-    floatDuration: 5.5,
-    delay: 0.2,
-    parallax: 0.9,
-    rotX: 120,
-    rotY: 300,
-    rotZ: -90,
-    mobileShow: false,
-    icon: <SiPostgresql className="h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#4169E1' }} />,
-  },
+
+  // 8. Flutter (MEDIUM ~38px mobile, 64px desktop) - Upper-left of profile photo ring
   {
     name: 'Flutter',
     brandColor: '#02569B',
     glowColor: 'rgba(2, 86, 155, 0.4)',
     sizeCategory: 'medium',
-    badgeSizeClass: 'h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16',
-    iconSizeClass: 'h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8',
-    position: 'top-[22%] left-[46%]',
+    badgeSizeClass: 'h-9.5 w-9.5 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-16 lg:w-16',
+    iconSizeClass: 'h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8',
+    position: 'top-[68%] left-[8%] sm:left-[10%] md:left-[46%] lg:top-[22%] lg:left-[46%]',
     floatDuration: 5.0,
     delay: 0.6,
     parallax: 1.05,
     rotX: -90,
     rotY: 270,
     rotZ: -120,
-    mobileShow: false,
-    icon: <SiFlutter className="h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#02569B' }} />,
+    mobileShow: true,
+    icon: <SiFlutter className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#02569B' }} />,
   },
+
+  // 9. C (SMALL ~26px mobile, 48px desktop) - Upper-right of profile photo ring
+  {
+    name: 'C',
+    brandColor: '#A8B9CC',
+    glowColor: 'rgba(168, 185, 204, 0.4)',
+    sizeCategory: 'small',
+    badgeSizeClass: 'h-6.5 w-6.5 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12',
+    iconSizeClass: 'h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6',
+    position: 'top-[74%] right-[8%] sm:right-[10%] md:left-[48%] lg:top-[44%] lg:left-[48%]',
+    floatDuration: 4.7,
+    delay: 0.9,
+    parallax: 1.05,
+    rotX: -120,
+    rotY: 240,
+    rotZ: -60,
+    mobileShow: true,
+    icon: <SiC className="h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6" style={{ color: '#A8B9CC' }} />,
+  },
+
+  // 10. PostgreSQL (MEDIUM ~38px mobile, 64px desktop) - Lower-right of profile photo
+  {
+    name: 'PostgreSQL',
+    brandColor: '#4169E1',
+    glowColor: 'rgba(65, 105, 225, 0.4)',
+    sizeCategory: 'medium',
+    badgeSizeClass: 'h-9.5 w-9.5 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-16 lg:w-16',
+    iconSizeClass: 'h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8',
+    position: 'top-[84%] right-[6%] sm:right-[8%] md:right-[6%] lg:bottom-[14%] lg:right-[7%]',
+    floatDuration: 5.5,
+    delay: 0.2,
+    parallax: 0.9,
+    rotX: 120,
+    rotY: 300,
+    rotZ: -90,
+    mobileShow: true,
+    icon: <SiPostgresql className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8" style={{ color: '#4169E1' }} />,
+  },
+
+  // 11. Adobe (SMALL ~26px mobile, 48px desktop) - Lower-left of profile photo
+  {
+    name: 'Adobe',
+    brandColor: '#FF0000',
+    glowColor: 'rgba(255, 0, 0, 0.4)',
+    sizeCategory: 'small',
+    badgeSizeClass: 'h-6.5 w-6.5 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-12 lg:w-12',
+    iconSizeClass: 'h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6',
+    position: 'top-[88%] left-[6%] sm:left-[8%] md:left-[42%] lg:top-[68%] lg:left-[42%]',
+    floatDuration: 5.6,
+    delay: 0.7,
+    parallax: 1.15,
+    rotX: 210,
+    rotY: -180,
+    rotZ: -120,
+    mobileShow: true,
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 sm:h-4.5 sm:w-4.5 md:h-5.5 md:w-5.5 lg:h-6 lg:w-6">
+        <path fill="#FF0000" d="M13.966 22h6.034L12 2h-6.034L10.034 22zM10.034 22H4L12 2h6.034L10.034 22zM14.4 15.6H9.6l2.4-5.8 2.4 5.8z" />
+      </svg>
+    ),
+  },
+
+  // 12. Canva (MEDIUM ~38px mobile, 64px desktop) - Profile photo bottom right / scroll cue
   {
     name: 'Canva',
     brandColor: '#00C4CC',
     glowColor: 'rgba(0, 196, 204, 0.45)',
     sizeCategory: 'medium',
-    badgeSizeClass: 'h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16',
-    iconSizeClass: 'h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8',
-    position: 'bottom-[22%] right-[14%]',
+    badgeSizeClass: 'h-9.5 w-9.5 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-16 lg:w-16',
+    iconSizeClass: 'h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8',
+    position: 'top-[93%] right-[14%] sm:right-[16%] md:right-[14%] lg:bottom-[22%] lg:right-[14%]',
     floatDuration: 5.3,
     delay: 0.9,
     parallax: 1.1,
     rotX: 150,
     rotY: -240,
     rotZ: 180,
-    mobileShow: false,
+    mobileShow: true,
     icon: (
-      <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 sm:h-5.5 sm:w-5.5 md:h-7 md:w-7 lg:h-8 lg:w-8">
+      <svg viewBox="0 0 24 24" className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 lg:h-8 lg:w-8">
         <defs>
           <linearGradient id="canvaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#00C4CC" />
@@ -175,88 +273,6 @@ const BADGES = [
           </linearGradient>
         </defs>
         <path fill="url(#canvaGrad)" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 13.5c-1.2 1.2-2.8 1.8-4.5 1.8-3.3 0-5.8-2.2-5.8-5.5 0-3.6 2.8-6.1 6.5-6.1 1.6 0 2.9.5 3.8 1.4l-1.2 1.4c-.7-.7-1.6-1-2.6-1-2.4 0-4.2 1.6-4.2 4.2 0 2.2 1.5 3.7 3.8 3.7 1.1 0 2.1-.4 2.9-1.1l1.3 1.2z" />
-      </svg>
-    ),
-  },
-
-  // --- SMALL BACKGROUND ACCENT BADGES ---
-  {
-    name: 'Power BI',
-    brandColor: '#F2C811',
-    glowColor: 'rgba(242, 200, 17, 0.4)',
-    sizeCategory: 'small',
-    badgeSizeClass: 'h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12',
-    iconSizeClass: 'h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6',
-    position: 'top-[10%] left-[32%]',
-    floatDuration: 5.1,
-    delay: 0.5,
-    parallax: 1.15,
-    rotX: -60,
-    rotY: 180,
-    rotZ: 90,
-    mobileShow: false,
-    icon: (
-      <div className="flex flex-col items-center justify-center leading-none">
-        <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6">
-          <rect x="3" y="12" width="4.5" height="9" rx="1" fill="#F2C811" />
-          <rect x="9.75" y="7" width="4.5" height="14" rx="1" fill="#F2C811" />
-          <rect x="16.5" y="3" width="4.5" height="18" rx="1" fill="#F2C811" />
-        </svg>
-      </div>
-    ),
-  },
-  {
-    name: 'MySQL',
-    brandColor: '#4479A1',
-    glowColor: 'rgba(68, 121, 161, 0.4)',
-    sizeCategory: 'small',
-    badgeSizeClass: 'h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12',
-    iconSizeClass: 'h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6',
-    position: 'bottom-[8%] left-[54%]',
-    floatDuration: 4.9,
-    delay: 0.6,
-    parallax: 1.0,
-    rotX: 180,
-    rotY: -180,
-    rotZ: 120,
-    mobileShow: false,
-    icon: <SiMysql className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" style={{ color: '#4479A1' }} />,
-  },
-  {
-    name: 'C',
-    brandColor: '#A8B9CC',
-    glowColor: 'rgba(168, 185, 204, 0.4)',
-    sizeCategory: 'small',
-    badgeSizeClass: 'h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12',
-    iconSizeClass: 'h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6',
-    position: 'top-[44%] left-[48%]',
-    floatDuration: 4.7,
-    delay: 0.9,
-    parallax: 1.05,
-    rotX: -120,
-    rotY: 240,
-    rotZ: -60,
-    mobileShow: false,
-    icon: <SiC className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" style={{ color: '#A8B9CC' }} />,
-  },
-  {
-    name: 'Adobe',
-    brandColor: '#FF0000',
-    glowColor: 'rgba(255, 0, 0, 0.4)',
-    sizeCategory: 'small',
-    badgeSizeClass: 'h-9 w-9 sm:h-11 sm:w-11 md:h-12 md:w-12',
-    iconSizeClass: 'h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6',
-    position: 'top-[68%] left-[42%]',
-    floatDuration: 5.6,
-    delay: 0.7,
-    parallax: 1.15,
-    rotX: 210,
-    rotY: -180,
-    rotZ: -120,
-    mobileShow: false,
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6">
-        <path fill="#FF0000" d="M13.966 22h6.034L12 2h-6.034L10.034 22zM10.034 22H4L12 2h6.034L10.034 22zM14.4 15.6H9.6l2.4-5.8 2.4 5.8z" />
       </svg>
     ),
   },
@@ -309,9 +325,9 @@ export default function TechFloatingBadges() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-none z-10 select-none overflow-hidden [perspective:1000px]"
+      className="absolute inset-0 pointer-events-none z-0 select-none overflow-hidden [perspective:1000px]"
     >
-      {/* Floating Glass Badges with strict responsive corner clearance */}
+      {/* Floating Glass Badges with background z-0 layering & varied responsive sizes */}
       {BADGES.map((badge) => {
         const parallaxX = reduce ? 0 : mousePos.x * badge.parallax * 12
         const parallaxY = reduce ? 0 : mousePos.y * badge.parallax * 12
