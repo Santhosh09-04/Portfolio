@@ -84,7 +84,7 @@ export default function About() {
             <Reveal delay={0.26}>
               <div className="mt-8 flex flex-wrap gap-2">
                 <span className="chip">UI / UX</span>
-                <span className="chip">Front-End</span>
+                <span className="chip">Full-Stack</span>
                 <span className="chip">Data &amp; BI</span>
                 <span className="chip">Voice AI</span>
                 <span className="chip">Problem Solving</span>
