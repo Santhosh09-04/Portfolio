@@ -310,7 +310,7 @@ export default function TechFloatingBadges() {
           rotateZ: rotZ,
           ease: 'none',
           scrollTrigger: {
-            trigger: '#hero',
+            trigger: containerRef.current || '#hero',
             start: 'top top',
             end: 'bottom top',
             scrub: 0.8,

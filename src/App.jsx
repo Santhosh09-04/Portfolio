@@ -3,6 +3,7 @@ import ScrollProgress from './components/ScrollProgress.jsx'
 import CustomCursor from './components/CustomCursor.jsx'
 import Navbar from './components/Navbar.jsx'
 import AmbientScene from './components/three/AmbientScene.jsx'
+import ScrollCanvasBackground from './components/ScrollCanvasBackground.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
 import Education from './components/Education.jsx'
@@ -21,6 +22,9 @@ export default function App() {
       <Preloader />
       <CustomCursor />
       <ScrollProgress />
+
+      {/* fixed scroll-driven canvas background */}
+      <ScrollCanvasBackground />
 
       {/* fixed 3D field behind everything */}
       <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 w-full max-w-full overflow-hidden">
