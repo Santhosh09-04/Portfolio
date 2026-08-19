@@ -123,6 +123,7 @@ export const projects = [
       'Developed a digital solution to foster secure, inclusive environments by streamlining POSH compliance and women-safety protocols. Features an anonymous grievance reporting system and real-time emergency alerts for legal documentation — improved incident reporting transparency by 30%.',
     tags: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
     accent: 'from-ac-lav to-ac-peach',
+    link: 'https://safework-e3xc.onrender.com',
   },
   {
     title: 'Ticket Booking Site',
