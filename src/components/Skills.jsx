@@ -38,7 +38,7 @@ export default function Skills() {
                   <span
                     className={`flex h-13 w-13 items-center justify-center rounded-2xl ${group.tint} shadow-soft`}
                   >
-                    <Icon name={group.icon} className="h-6 w-6 text-ac-lav" />
+                    <Icon name={group.icon} className="h-6 w-6 text-ac-lav dark:text-ac-sky" />
                   </span>
                   <h3 className="mt-5 font-display text-xl font-semibold text-ink">{group.title}</h3>
                   <p className="mt-1.5 text-sm text-muted">{group.blurb}</p>

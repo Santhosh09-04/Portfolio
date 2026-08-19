@@ -23,13 +23,13 @@ function PhotoFrame() {
         }}
       />
       {/* frosted inset */}
-      <div aria-hidden="true" className="absolute inset-1.5 rounded-full bg-white/75 backdrop-blur-md" />
+      <div aria-hidden="true" className="absolute inset-1.5 rounded-full bg-white/75 dark:bg-slate-900/80 backdrop-blur-md" />
       {/* photo / placeholder */}
-      <div className="absolute inset-[1.1rem] flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-lilac via-mist to-blush shadow-inner">
+      <div className="absolute inset-[1.1rem] flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-lilac via-mist to-blush dark:from-slate-800 dark:to-slate-900 shadow-inner">
         {err ? (
           <div className="flex h-full w-full flex-col items-center justify-center gap-1.5 px-6 text-center">
             <span className="font-display text-5xl font-bold text-gradient">SV</span>
-            <span className="text-xs font-medium leading-snug text-muted">
+            <span className="text-xs font-medium leading-snug text-muted dark:text-gray-300">
               {profile.photoPlaceholderText}
             </span>
           </div>
@@ -62,7 +62,7 @@ export default function About() {
           <div className="lg:col-span-3">
             <Reveal>
               <span className="chip">
-                <Icon name="user" className="h-4 w-4 text-ac-lav" />
+                <Icon name="user" className="h-4 w-4 text-ac-lav dark:text-ac-sky" />
                 About Me
               </span>
             </Reveal>

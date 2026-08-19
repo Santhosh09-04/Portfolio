@@ -14,22 +14,23 @@ import Languages from './components/Languages.jsx'
 import Interests from './components/Interests.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+
 export default function App() {
   return (
-    <div className="relative">
+    <div className="relative w-full max-w-full overflow-x-hidden">
       <Preloader />
       <CustomCursor />
       <ScrollProgress />
 
       {/* fixed 3D field behind everything */}
-      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
+      <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 w-full max-w-full overflow-hidden">
         <AmbientScene />
       </div>
 
       {/* page content above the 3D field */}
-      <div className="relative z-[2]">
+      <div className="relative z-[2] w-full max-w-full overflow-x-hidden">
         <Navbar />
-        <main>
+        <main className="w-full max-w-full overflow-x-hidden">
           <Hero />
           <About />
           <Education />

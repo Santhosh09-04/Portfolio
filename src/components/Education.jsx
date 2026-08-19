@@ -7,7 +7,7 @@ export default function Education() {
   return (
     <section id="education" className="relative py-24 sm:py-28">
       {/* backdrop tint */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 w-full max-w-full overflow-hidden">
         <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-lilac/60 blur-3xl" />
       </div>
 
@@ -37,8 +37,8 @@ export default function Education() {
                 <li key={item.degree} className="relative md:flex">
                   {/* node */}
                   <Reveal className="absolute left-5 z-10 -translate-x-1/2 md:left-1/2" y={0}>
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white bg-white/85 shadow-soft backdrop-blur">
-                      <Icon name={item.icon} className="h-5 w-5 text-ac-lav" />
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white dark:border-white/20 bg-white/85 dark:bg-slate-800/90 shadow-soft backdrop-blur">
+                      <Icon name={item.icon} className="h-5 w-5 text-ac-lav dark:text-ac-sky" />
                     </span>
                   </Reveal>
 
@@ -47,7 +47,7 @@ export default function Education() {
                     className={`ml-16 md:ml-0 md:w-1/2 ${flip ? 'md:ml-auto md:pl-12' : 'md:pr-12 md:text-right'}`}
                   >
                     <div className="glass rounded-2xl p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-glass">
-                      <span className="inline-block rounded-full bg-lilac/80 px-3 py-1 text-xs font-semibold text-ac-lav">
+                      <span className="inline-block rounded-full bg-lilac/80 dark:bg-ac-lav/20 px-3 py-1 text-xs font-semibold text-ac-lav dark:text-ac-sky">
                         {item.period}
                       </span>
                       <h3 className="mt-3 font-display text-lg font-semibold text-ink sm:text-xl">

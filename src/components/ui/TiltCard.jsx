@@ -59,7 +59,7 @@ export default function TiltCard({ children, className = '', intensity = 9, glar
         {glare && enabled ? (
           <motion.div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+            className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-70 transition-opacity duration-300 group-hover:opacity-100 dark:opacity-20 dark:group-hover:opacity-40"
             style={{ background: glareBg }}
           />
         ) : null}

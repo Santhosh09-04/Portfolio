@@ -17,9 +17,9 @@ export default function Preloader() {
   }, [])
 
   useEffect(() => {
-    document.documentElement.style.overflow = done ? '' : 'hidden'
+    document.body.style.overflowY = done ? '' : 'hidden'
     return () => {
-      document.documentElement.style.overflow = ''
+      document.body.style.overflowY = ''
     }
   }, [done])
 

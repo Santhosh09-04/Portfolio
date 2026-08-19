@@ -6,7 +6,7 @@ import Reveal from './ui/Reveal.jsx'
 import Icon from './ui/Icon.jsx'
 
 const inputCls =
-  'w-full rounded-2xl border border-white/80 bg-white/70 px-4 py-3.5 text-[16px] text-ink shadow-soft placeholder:text-muted/70 outline-none backdrop-blur transition focus:border-ac-lav/70 focus:bg-white focus:ring-4 focus:ring-ac-lav/20 sm:text-sm'
+  'w-full rounded-2xl border border-white/80 dark:border-white/20 bg-white/70 dark:bg-slate-900/80 px-4 py-3.5 text-[16px] text-ink dark:text-white shadow-soft placeholder:text-muted/70 dark:placeholder:text-gray-400 outline-none backdrop-blur transition focus:border-ac-lav/70 focus:bg-white dark:focus:bg-slate-900 focus:ring-4 focus:ring-ac-lav/20 sm:text-sm'
 
 export default function Contact() {
   const [status, setStatus] = useState('idle')
@@ -35,9 +35,9 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative overflow-hidden py-24 sm:py-28">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-24 bottom-0 h-96 w-96 rounded-full bg-lilac/70 blur-3xl" />
-        <div className="absolute -right-20 top-10 h-80 w-80 rounded-full bg-blush/70 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 w-full max-w-full overflow-hidden">
+        <div className="absolute left-0 bottom-0 h-96 w-96 rounded-full bg-lilac/70 blur-3xl" />
+        <div className="absolute right-0 top-10 h-80 w-80 rounded-full bg-blush/70 blur-3xl" />
       </div>
 
       <div className="section-shell">
@@ -58,8 +58,8 @@ export default function Contact() {
             {contactRows.map((row, i) => (
               <Reveal key={row.label} delay={i * 0.08}>
                 <div className="glass flex items-center gap-4 rounded-2xl p-5 shadow-soft transition hover:shadow-glass">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-lilac">
-                    <Icon name={row.icon} className="h-5 w-5 text-ac-lav" />
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-lilac dark:bg-ac-lav/20">
+                    <Icon name={row.icon} className="h-5 w-5 text-ac-lav dark:text-ac-sky" />
                   </span>
                   <div className="min-w-0">
                     <p className="text-xs font-semibold uppercase tracking-wider text-muted">
@@ -68,7 +68,7 @@ export default function Contact() {
                     {row.href ? (
                       <a
                         href={row.href}
-                        className="mt-0.5 block truncate font-medium text-ink transition-colors hover:text-ac-lav"
+                        className="mt-0.5 block truncate font-medium text-ink transition-colors hover:text-ac-lav dark:hover:text-ac-sky"
                       >
                         {row.value}
                       </a>
@@ -155,7 +155,7 @@ export default function Contact() {
                     {status === 'sending' ? 'Opening…' : 'Send Message'}
                   </button>
                   <p className="flex items-center gap-1.5 text-xs text-muted">
-                    <Icon name="sparkles" className="h-3.5 w-3.5 text-ac-lav" />
+                    <Icon name="sparkles" className="h-3.5 w-3.5 text-ac-lav dark:text-ac-sky" />
                     Opens your email app with a ready-to-send draft.
                   </p>
                 </div>

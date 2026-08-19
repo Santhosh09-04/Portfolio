@@ -32,6 +32,8 @@ import {
   PenTool,
   Database,
   CalendarDays,
+  Sun,
+  Moon,
 } from 'lucide-react'
 
 /* Brand icons removed from lucide-react core — small inline SVGs instead. */
@@ -107,6 +109,8 @@ const map = {
   fileText: FileText,
   heart: HeartHandshake,
   calendar: CalendarDays,
+  sun: Sun,
+  moon: Moon,
 }
 
 export default function Icon({ name, className = 'h-5 w-5', strokeWidth = 2, ...rest }) {

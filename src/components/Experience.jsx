@@ -17,8 +17,8 @@ export default function Experience() {
 
   return (
     <section id="experience" className="relative overflow-hidden py-24 sm:py-28">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -left-20 top-1/4 h-80 w-80 rounded-full bg-mist/70 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 w-full max-w-full overflow-hidden">
+        <div className="absolute left-0 top-1/4 h-80 w-80 rounded-full bg-mist/70 blur-3xl" />
       </div>
 
       <div className="section-shell">
@@ -47,27 +47,27 @@ export default function Experience() {
               >
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute right-6 top-5 font-display text-5xl font-bold text-lilac"
+                  className="pointer-events-none absolute right-6 top-5 font-display text-5xl font-bold text-lilac dark:text-white/10"
                 >
                   0{i + 1}
                 </span>
                 <div className="relative flex items-center gap-4">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-lilac shadow-soft">
-                    <Icon name={exp.icon} className="h-5 w-5 text-ac-lav" />
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-lilac dark:bg-ac-lav/20 shadow-soft">
+                    <Icon name={exp.icon} className="h-5 w-5 text-ac-lav dark:text-ac-sky" />
                   </span>
                   <div className="min-w-0">
                     <h3 className="truncate font-display text-lg font-semibold text-ink">{exp.role}</h3>
                     <p className="text-sm font-medium text-ink-soft">{exp.company}</p>
                   </div>
                 </div>
-                <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-blush/90 px-3 py-1.5 text-xs font-semibold text-ac-peach">
+                <span className="mt-5 inline-flex w-fit items-center gap-1.5 rounded-full bg-blush/90 dark:bg-ac-peach/20 px-3 py-1.5 text-xs font-semibold text-ac-peach dark:text-ac-peachsoft">
                   <Icon name="calendar" className="h-3.5 w-3.5" />
                   {exp.period}
                 </span>
                 <ul className="mt-5 space-y-2.5">
                   {exp.points.map((pt) => (
                     <li key={pt.slice(0, 20)} className="flex items-start gap-2.5 text-sm leading-relaxed text-ink-soft">
-                      <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-ac-lav" />
+                      <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-ac-lav dark:text-ac-sky" />
                       {pt}
                     </li>
                   ))}

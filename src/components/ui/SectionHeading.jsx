@@ -12,7 +12,7 @@ export default function SectionHeading({
     <div className="mb-12 text-center sm:mb-16">
       <Reveal>
         <span className="chip mx-auto shadow-sm">
-          <Icon name={icon} className="h-4 w-4 text-ac-lav" />
+          <Icon name={icon} className="h-4 w-4 text-ac-lav dark:text-ac-sky" />
           {kicker}
         </span>
       </Reveal>

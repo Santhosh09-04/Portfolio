@@ -72,7 +72,7 @@ export default function Certificates() {
                   </p>
 
                   {link && (
-                    <span className="relative mt-3 inline-flex items-center justify-center text-[11px] font-semibold text-ac-lav opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    <span className="relative mt-3 inline-flex items-center justify-center text-[11px] font-semibold text-ac-lav dark:text-ac-sky opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                       View Credential &rarr;
                     </span>
                   )}

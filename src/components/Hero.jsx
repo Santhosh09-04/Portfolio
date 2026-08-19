@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { profile, heroSocials } from '../data/profile.js'
 import Icon from './ui/Icon.jsx'
 import HeroScene from './three/HeroScene.jsx'
+import TechFloatingBadges from './three/TechFloatingBadges.jsx'
 
 const EASE = [0.22, 1, 0.36, 1]
 gsap.registerPlugin(ScrollTrigger)
@@ -58,12 +59,12 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative flex min-h-[100svh] flex-col items-center overflow-x-hidden pb-24 pt-32 sm:pt-28 md:flex-row"
+      className="relative flex min-h-[100svh] w-full max-w-full flex-col items-center overflow-x-hidden pb-24 pt-32 sm:pt-28 md:flex-row"
     >
       {/* soft color washes (gsap parallax targets) */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div data-wash className="absolute -left-32 top-10 h-96 w-96 rounded-full bg-lilac/70 blur-3xl" />
-        <div data-wash className="absolute -right-20 top-1/3 h-105 w-105 rounded-full bg-blush/70 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 w-full max-w-full overflow-hidden">
+        <div data-wash className="absolute left-0 top-10 h-80 w-80 rounded-full bg-lilac/70 blur-3xl" />
+        <div data-wash className="absolute right-0 top-1/3 h-80 w-80 rounded-full bg-blush/70 blur-3xl" />
         <div data-wash className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-mist/70 blur-3xl" />
       </div>
 
@@ -73,14 +74,15 @@ export default function Hero() {
         className="dot-grid pointer-events-none absolute inset-0 -z-10 opacity-70 [mask-image:radial-gradient(75%_70%_at_60%_40%,black,transparent)]"
       />
 
-      {/* floating 3D centerpiece + profile photo */}
+      {/* section-wide floating tech logo badges */}
+      <TechFloatingBadges />
+
+      {/* profile photo container */}
       <div
         aria-hidden="true"
-        className="pointer-events-none relative order-2 mt-14 h-[340px] w-full overflow-hidden md:order-none md:absolute md:inset-y-0 md:left-auto md:right-0 md:mt-0 md:h-auto md:w-[52%] md:overflow-visible"
+        className="pointer-events-none relative order-2 mt-8 h-[380px] w-full max-w-full overflow-hidden sm:h-[420px] md:order-none md:absolute md:inset-y-0 md:left-auto md:right-0 md:mt-0 md:h-auto md:w-[52%] md:overflow-visible"
       >
         <div className="relative h-full w-full">
-          <HeroScene />
-
           {/* soft glow blob behind the photo */}
           <div className="absolute inset-0 grid place-items-center">
             <div

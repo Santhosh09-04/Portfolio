@@ -7,7 +7,7 @@ import Icon from './ui/Icon.jsx'
 export default function Projects() {
   return (
     <section id="projects" className="relative py-24 sm:py-28">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 w-full max-w-full overflow-hidden">
         <div className="absolute right-1/4 top-10 h-96 w-96 rounded-full bg-mist/70 blur-3xl" />
         <div className="absolute bottom-10 left-1/4 h-72 w-72 rounded-full bg-lilac/60 blur-3xl" />
       </div>
