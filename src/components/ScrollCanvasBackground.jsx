@@ -4,7 +4,7 @@ const TOTAL_FRAMES = 300
 
 function getFrameUrl(index) {
   const num = String(index + 1).padStart(3, '0')
-  return `/FINAL PNG/ezgif-frame-${num}.png`
+  return `/FINAL%20PNG/ezgif-frame-${num}.png`
 }
 
 export default function ScrollCanvasBackground() {
@@ -14,11 +14,30 @@ export default function ScrollCanvasBackground() {
   const targetFrameRef = useRef(0)
   const animFrameIdRef = useRef(null)
 
-  // Draw & blend adjacent PNG frames for 60fps liquid-smooth scroll interpolation
+  // Find nearest loaded frame if target frame is still loading
+  const getLoadedImage = (targetIndex) => {
+    const images = imagesRef.current
+    if (images[targetIndex]?.complete && images[targetIndex]?.naturalWidth > 0) {
+      return images[targetIndex]
+    }
+    for (let i = targetIndex - 1; i >= 0; i--) {
+      if (images[i]?.complete && images[i]?.naturalWidth > 0) {
+        return images[i]
+      }
+    }
+    for (let i = targetIndex + 1; i < TOTAL_FRAMES; i++) {
+      if (images[i]?.complete && images[i]?.naturalWidth > 0) {
+        return images[i]
+      }
+    }
+    return null
+  }
+
+  // Draw & blend adjacent frames for high-definition 60fps liquid-smooth scroll interpolation
   const drawFrame = (fractionalFrame) => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')
+    const ctx = canvas.getContext('2d', { alpha: false, desynchronized: true }) || canvas.getContext('2d')
     if (!ctx) return
 
     const clamped = Math.max(0, Math.min(TOTAL_FRAMES - 1, fractionalFrame))
@@ -26,11 +45,12 @@ export default function ScrollCanvasBackground() {
     const index2 = Math.min(TOTAL_FRAMES - 1, Math.ceil(clamped))
     const blend = clamped - index1
 
-    const img1 = imagesRef.current[index1]
-    const img2 = imagesRef.current[index2]
+    const img1 = getLoadedImage(index1)
+    if (!img1) return
 
-    if (!img1 || !img1.complete || img1.naturalWidth === 0) return
+    const img2 = getLoadedImage(index2)
 
+    // High definition context settings
     ctx.imageSmoothingEnabled = true
     ctx.imageSmoothingQuality = 'high'
 
@@ -40,19 +60,19 @@ export default function ScrollCanvasBackground() {
     const ih = img1.naturalHeight
 
     const r = Math.max(w / iw, h / ih)
-    const nw = iw * r
-    const nh = ih * r
-    const cx = (w - nw) / 2
-    const cy = (h - nh) / 2
+    const nw = Math.ceil(iw * r)
+    const nh = Math.ceil(ih * r)
+    const cx = Math.floor((w - nw) / 2)
+    const cy = Math.floor((h - nh) / 2)
 
     ctx.clearRect(0, 0, w, h)
 
-    // Draw primary frame
-    ctx.globalAlpha = 1 - blend
+    // Draw primary frame in HD
+    ctx.globalAlpha = 1.0
     ctx.drawImage(img1, cx, cy, nw, nh)
 
-    // Cross-blend adjacent frame for ultra-smooth transition
-    if (index1 !== index2 && img2 && img2.complete && img2.naturalWidth > 0) {
+    // Cross-blend adjacent frame for ultra-smooth 60fps transitions
+    if (index1 !== index2 && img2 && img2 !== img1) {
       ctx.globalAlpha = blend
       ctx.drawImage(img2, cx, cy, nw, nh)
     }
@@ -60,14 +80,19 @@ export default function ScrollCanvasBackground() {
     ctx.globalAlpha = 1.0
   }
 
-  // Handle canvas sizing with high DPI pixel scaling
+  // Handle canvas sizing with high DPI Retina pixel scaling (up to 2.5x for full HD clarity)
   useEffect(() => {
     const handleResize = () => {
       const canvas = canvasRef.current
       if (!canvas) return
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      canvas.width = window.innerWidth * dpr
-      canvas.height = window.innerHeight * dpr
+      const dpr = Math.min(window.devicePixelRatio || 1, 2.5)
+      const rect = canvas.getBoundingClientRect()
+      const width = rect.width || window.innerWidth
+      const height = rect.height || window.innerHeight
+
+      canvas.width = Math.round(width * dpr)
+      canvas.height = Math.round(height * dpr)
+
       drawFrame(currentFrameRef.current)
     }
 
@@ -76,7 +101,7 @@ export default function ScrollCanvasBackground() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Preload frame PNGs & run liquid-smooth scroll interpolation animation loop
+  // Preload frame sequence & run liquid-smooth scroll interpolation loop
   useEffect(() => {
     imagesRef.current = new Array(TOTAL_FRAMES)
 
@@ -85,8 +110,8 @@ export default function ScrollCanvasBackground() {
       img.src = getFrameUrl(i)
       img.onload = () => {
         imagesRef.current[i] = img
-        if (i === 0) {
-          drawFrame(0)
+        if (i === 0 || Math.abs(currentFrameRef.current - i) < 1) {
+          drawFrame(currentFrameRef.current)
         }
       }
       imagesRef.current[i] = img
@@ -97,7 +122,7 @@ export default function ScrollCanvasBackground() {
       const scrollMax = document.documentElement.scrollHeight - window.innerHeight
       if (scrollMax > 0) {
         const scrollFraction = Math.max(0, Math.min(1, window.scrollY / scrollMax))
-        targetFrameRef.current = Math.min(TOTAL_FRAMES - 1, scrollFraction * (TOTAL_FRAMES - 1))
+        targetFrameRef.current = scrollFraction * (TOTAL_FRAMES - 1)
       }
 
       const diff = targetFrameRef.current - currentFrameRef.current
@@ -123,18 +148,20 @@ export default function ScrollCanvasBackground() {
       aria-hidden="true"
       className="pointer-events-none fixed inset-0 -z-30 h-full w-full overflow-hidden select-none"
     >
-      {/* Canvas background layer */}
+      {/* HD Canvas background layer with high definition contrast & sharpness filters */}
       <canvas
         ref={canvasRef}
-        className="h-full w-full object-cover opacity-75 contrast-[1.05] brightness-[1.02] transition-opacity duration-500 dark:opacity-80 dark:brightness-105"
+        style={{ imageRendering: '-webkit-optimize-contrast' }}
+        className="h-full w-full object-cover opacity-85 contrast-[1.08] brightness-[1.04] saturate-[1.06] transition-all duration-500 dark:opacity-90 dark:contrast-[1.12] dark:brightness-[1.06] dark:saturate-[1.08]"
       />
 
-      {/* Readability vignette overlay for light & dark modes */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,transparent_20%,var(--color-vignette-mid)_65%,var(--color-vignette-outer)_98%)] opacity-85 transition-colors duration-500 [--color-vignette-mid:rgba(246,244,240,0.70)] [--color-vignette-outer:rgba(246,244,240,0.95)] dark:[--color-vignette-mid:rgba(15,23,42,0.75)] dark:[--color-vignette-outer:rgba(15,23,42,0.95)]" />
+      {/* Crisp readability vignette overlay with high clarity */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,transparent_25%,var(--color-vignette-mid)_70%,var(--color-vignette-outer)_98%)] opacity-75 transition-colors duration-500 [--color-vignette-mid:rgba(246,244,240,0.55)] [--color-vignette-outer:rgba(246,244,240,0.88)] dark:[--color-vignette-mid:rgba(15,23,42,0.60)] dark:[--color-vignette-outer:rgba(15,23,42,0.92)]" />
 
-      {/* Subtle backdrop wash */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/20 via-cream/35 to-cream/60 dark:from-slate-950/25 dark:via-slate-950/40 dark:to-slate-950/70" />
+      {/* Subtle background color wash */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/15 via-cream/25 to-cream/50 dark:from-slate-950/20 dark:via-slate-950/35 dark:to-slate-950/65" />
     </div>
   )
 }
+
 

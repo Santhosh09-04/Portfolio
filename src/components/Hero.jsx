@@ -133,18 +133,18 @@ function HeroBackground() {
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 -z-20 h-full w-full overflow-hidden select-none"
     >
-      {/* Background image layer */}
+      {/* Ultra HD Background image layer */}
       {!hasError && (
         <img
           src={bgSrc}
           onError={handleImageError}
           alt=""
-          className="h-full w-full object-cover object-center opacity-15 transition-opacity duration-500 dark:opacity-20 dark:brightness-90 dark:contrast-105"
+          className="h-full w-full object-cover object-center opacity-30 contrast-[1.12] brightness-[1.05] transition-opacity duration-500 dark:opacity-35 dark:brightness-110 dark:contrast-115"
         />
       )}
 
-      {/* Soft atmospheric overlay gradient (adapts automatically to light & dark mode) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cream/40 via-cream/70 to-cream dark:from-cream/60 dark:via-cream/80 dark:to-cream" />
+      {/* Atmospheric overlay gradient (adapts automatically to light & dark mode) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream/30 via-cream/60 to-cream dark:from-slate-950/30 dark:via-slate-950/60 dark:to-slate-950/90" />
     </div>
   )
 }
