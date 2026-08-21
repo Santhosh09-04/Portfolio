@@ -42,6 +42,15 @@ export default function Projects() {
                     name="sparkles"
                     className="absolute inset-x-0 bottom-4 mx-auto h-9 w-9 text-white/80 drop-shadow"
                   />
+                  {project.link && (
+                    <div
+                      title="Open project in new tab"
+                      aria-label={`Open ${project.title} project in new tab`}
+                      className="absolute right-3.5 top-3.5 flex h-8 w-8 items-center justify-center rounded-full border border-white/40 bg-white/25 backdrop-blur-md shadow-sm text-white transition-all duration-200 group-hover:scale-110 group-hover:bg-white group-hover:text-ac-lav group-hover:shadow-md"
+                    >
+                      <Icon name="arrowUpRight" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-1 flex-col p-7">
                   <h3 className="font-display text-lg font-semibold leading-snug text-ink">

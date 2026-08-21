@@ -1,5 +1,6 @@
 import Preloader from './components/Preloader.jsx'
 import ScrollProgress from './components/ScrollProgress.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 import CustomCursor from './components/CustomCursor.jsx'
 import Navbar from './components/Navbar.jsx'
 import AmbientScene from './components/three/AmbientScene.jsx'
@@ -22,6 +23,7 @@ export default function App() {
       <Preloader />
       <CustomCursor />
       <ScrollProgress />
+      <ScrollToTop />
 
       {/* fixed scroll-driven canvas background */}
       <ScrollCanvasBackground />

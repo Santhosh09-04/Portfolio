@@ -46,10 +46,11 @@ export default function Certificates() {
 
                   {link && (
                     <div
-                      aria-hidden="true"
-                      className="absolute right-4 top-4 rounded-full p-1 text-muted transition-all duration-200 group-hover:bg-white/60 group-hover:text-ink group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      title="Open credential in new tab"
+                      aria-label={`Open ${cert.title} credential in new tab`}
+                      className="absolute right-3.5 top-3.5 flex h-8 w-8 items-center justify-center rounded-full border border-hairline/80 dark:border-white/15 bg-white/80 dark:bg-slate-900/80 shadow-soft text-ink-soft dark:text-ink transition-all duration-200 group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-slate-800 group-hover:text-ac-lav dark:group-hover:text-ac-sky group-hover:border-ac-lav/50"
                     >
-                      <Icon name="arrowUpRight" className="h-4 w-4" />
+                      <Icon name="arrowUpRight" className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   )}
 

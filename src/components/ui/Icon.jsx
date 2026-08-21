@@ -32,6 +32,8 @@ import {
   PenTool,
   Database,
   CalendarDays,
+  ArrowUp,
+  ChevronUp,
   Sun,
   Moon,
 } from 'lucide-react'
@@ -109,6 +111,8 @@ const map = {
   fileText: FileText,
   heart: HeartHandshake,
   calendar: CalendarDays,
+  arrowUp: ArrowUp,
+  chevronUp: ChevronUp,
   sun: Sun,
   moon: Moon,
 }
